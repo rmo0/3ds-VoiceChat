@@ -39,7 +39,6 @@ It runs as a Luma3DS plugin: PTT (Push-to-Talk) sends mic audio over TCP, and re
    cd libncsnd
    make install
    ```
-
 4. Build this repository:
 
    ```bash
@@ -59,8 +58,8 @@ It runs as a Luma3DS plugin: PTT (Push-to-Talk) sends mic audio over TCP, and re
 ## Troubleshooting
 
 - **CTRPF menu does not open after Init** — Try disabling the connection before opening the menu, or open the menu before enabling Host/Connect.
+- **Same-PC connection (e.g. two Citra instances)**
 
-- **Same-PC connection (e.g. two Citra instances)**  
   - Host: Set IP:Port to `127.0.0.1:4660` (or `0.0.0.0:4660`), then select Host.
   - Connect: Set IP:Port to `127.0.0.1:4660`, then select Connect.
   - If 127.0.0.1 does not work, try your PC's LAN IP (e.g. 192.168.1.x from `ipconfig`).
@@ -73,22 +72,14 @@ Issues and pull requests are welcome.
 
 This project relies on the following libraries and templates. Thanks to the authors for developing and releasing them.
 
-- **[libctru](https://github.com/devkitPro/libctru)** ([devkitPro](https://github.com/devkitPro))  
-  Official library for 3DS system calls and services (socket, memory, mic, etc.).
-
-- **[CTRPluginFramework](https://github.com/Nanquitas/CTRPluginFramework)** ([Nanquitas](https://github.com/Nanquitas))  
-  Created by Nanquitas. Provides CTRPF.
-
-- **[CTRPluginFramework - Blank Template](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate)** ([PabloMK7](https://github.com/PabloMK7))  
-  Blank CTRPF plugin template. Used as the base for this project.
-
-- **[libncsnd](https://github.com/PabloMK7/libncsnd)** ([PabloMK7](https://github.com/PabloMK7))  
-  Library that provides an interface to the CSND service. Used here for audio playback when DSP is not available.
-
-- **Patches (soc hooks)** — [tekito_256](https://github.com/tekito-256) (tekito_256)  
+- **[libctru](https://github.com/devkitPro/libctru)** ([devkitPro](https://github.com/devkitPro))Official library for 3DS system calls and services (socket, memory, mic, etc.).
+- **[CTRPluginFramework](https://github.com/Nanquitas/CTRPluginFramework)** ([Nanquitas](https://github.com/Nanquitas))Created by Nanquitas. Provides CTRPF.
+- **[CTRPluginFramework - Blank Template](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate)** ([PabloMK7](https://github.com/PabloMK7))Blank CTRPF plugin template. Used as the base for this project.
+- **[libncsnd](https://github.com/PabloMK7/libncsnd)** ([PabloMK7](https://github.com/PabloMK7))Library that provides an interface to the CSND service. Used here for audio playback when DSP is not available.
+- **Patches (soc hooks)** — [tekito_256](https://github.com/tekito-256) (tekito_256)
   Thanks for the implementation of `Patches.cpp` (socket service hooks for games that also use soc).
 
 ## License
 
-This project is licensed under the same license as [CTRPluginFramework](https://github.com/Nanquitas/CTRPluginFramework).  
+This project is licensed under the same license as [CTRPluginFramework](https://github.com/Nanquitas/CTRPluginFramework).
 For the libraries and templates listed above, see their respective repositories for license information.
